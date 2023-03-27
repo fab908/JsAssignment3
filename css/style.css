@@ -3,16 +3,87 @@
     flex-flow: column;
     align-items: center;
 }
+
 #playerCards, #dealerCards{
     display: flex;
+}
+#dealerCards{
+    margin-bottom: 40px;
+}
+#playerCards > img:nth-child(1),
+#dealerCards > img:nth-child(1){
+    margin-left: 0px;
+}
+#playerCards > img,
+#dealerCards > img{
+    margin-left: -65px;
+    width: 100px;
+    height: auto;
 }
 p{
     margin-right: 10px;
 }
-.main{
-    height: 100%;
+body{
+    margin: 0px;
+    background-color: darkslategray;
+}
+main{
+    height: 494px;
+    width: auto;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
+    background-image: url("../img/background.png");
+}
+#results{
+    margin-bottom: 40px;
+    display: flex;
+    margin-top: 200px;
+    align-items: center;
+    justify-content: center;
+}
+.game{
+    margin-top: 75px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+p{
+    color:white;
+    font-size: 25px;
+}
+#playerScore > p{
+    margin-bottom: 0px;
+}
+#playerBalance{
+    margin-top: 0px;
+}
+.index{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button{
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border: 2px solid #000;
+    border-radius: 3px;
+    color: #fff;
+    background: #000;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    padding: 12px 20px;
+    text-align:center;
+    transition-duration: .15s;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    margin: 5px;
+}
+:hover{
+    color: #000;
+    background: rgb(255, 218, 87);
 }
