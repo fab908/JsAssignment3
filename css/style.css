@@ -65,6 +65,15 @@ p{
     align-items: center;
     justify-content: center;
 }
+.index > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+.index > div > h1{
+    color: white;
+}
 button{
     display: inline-block;
     outline: 0;
