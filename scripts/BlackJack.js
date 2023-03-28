@@ -16,7 +16,7 @@ var cards = [
     ["./img/queen_of_clubs.png", 10]
 ];
 // creating an array to store the dealers cards so that we can flip them when the player stays
-var dealersCards = new Array();
+var dealersCards = [];
 // path for the picture of the blank cards
 var blankCards = "./img/back.png"
 //player and dealers score variable
@@ -63,7 +63,7 @@ function initializeGame(){
             // selecting a random number between the length of the array holding the card values
             var cardSelector = Math.floor(Math.random() * 13);
             // if it's for the player
-            if(i == 2 || i == 3){
+            if(i === 2 || i === 3){
                 // update the players score
                 playerScore += (cards[cardSelector][1]);
                 // display the cards given
@@ -124,6 +124,8 @@ function dealerMove(){
 
 }
 function checkRules(){
+    document.getElementById("playerOptions").innerHTML = "<button onclick='startRound()'>Place Bet</button>" +
+        "<button><a href='index.html'>Quit</a></button>";
     // if the player busted
     if(playerScore > 21){
         document.getElementById("results").innerHTML = "Dealer Won. You Lost: $ " + betPlaced ;
@@ -138,21 +140,20 @@ function checkRules(){
         document.getElementById("results").innerHTML = "Dealer Won. You lost $" + betPlaced;
     }
     // if the players score is 21, make the dealer make its next move
-    else if(playerScore == 21){
+    else if(playerScore === 21){
         dealerMove();
     }
-    // if the playerscore is more than the dealers, and the player didnt bust they won
+    // if the players score is more than the dealers, and the player didn't go over they won
     else if(playerScore > dealerScore && playerScore <= 21){
         document.getElementById("results").innerHTML = "You Won. Winnings: $" + (betPlaced*2);
         playerBalance += (betPlaced*2);
     }
     // if there was a tie
-    else if(playerScore == dealerScore){
+    else if(playerScore === dealerScore){
         document.getElementById("results").innerHTML = "Tie! Returned: $" + betPlaced;
         playerBalance += betPlaced*1;
     }
     // update the player balance
     document.getElementById("playerBalance").innerHTML = "$" + playerBalance;
-    document.getElementById("playerOptions").innerHTML += "<button onclick='startRound()'>Place Bet</button>";
 }
 
